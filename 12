@@ -1,0 +1,117 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "RB battle", HidePremium = false, IntroText = "Skk RB battle", SaveConfig = true, ConfigFolder = "OrionTest"})
+local RBTab = Window:MakeTab({
+	Name = "RB battle",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+RBTab:AddButton({
+	Name = "auto coin",
+	Callback = function()
+      		print("button pressed")
+			  loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/Amity/main/RBBattles.lua"))()
+  	end    
+})
+
+RBTab:AddButton({
+	Name = "ServerHop",
+	Callback = function()
+      		print("button pressed")
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/Des5dw/hop/main/hop'))()
+  	end    
+})
+
+local LocalPlayerTab = Window:MakeTab({
+	Name = "LocalPlayer",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+LocalPlayerTab:AddButton({
+	Name = "E to noclip",
+	Callback = function()
+      		print("button pressed")
+              loadstring(game:HttpGet(('https://raw.githubusercontent.com/Des5dw/noclip/main/noclip'),true))()
+  	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "inf jump",
+	Callback = function()
+      		print("button pressed")
+              loadstring(game:HttpGet(('https://raw.githubusercontent.com/Des5dw/inf-jump/main/inf%20jump'),true))()  
+  	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "fly gui",
+	Callback = function()
+      		print("button pressed")
+              loadstring(game:HttpGet(('https://raw.githubusercontent.com/Des5dw/fly/main/fly'),true))()
+  	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "ctrl+click to tp",
+	Callback = function()
+      		print("button pressed")
+              loadstring(game:HttpGet(('https://raw.githubusercontent.com/Des5dw/tp/main/tp'),true))()  
+  	end    
+})
+
+LocalPlayerTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WalkSpeed",
+	Callback = function(s)
+		print(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+	end    
+})
+
+LocalPlayerTab:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 500,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jumppower",
+	Callback = function(s)
+		print(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+
+	end    
+})
+
+
+LocalPlayerTab:AddButton({
+	Name = "Reset WS/JP",
+	Callback = function()
+      		print("button pressed")
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+  	end    
+})
+
+local CreditTab = Window:MakeTab({
+	Name = "Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+CreditTab:AddParagraph("Skk hub V2","Project Skk Created")
+
+local Section = CreditTab:AddSection({
+	Name = "Last updated 2023/1/30"
+})
+
+
+OrionLib:Init()
